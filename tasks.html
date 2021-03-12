@@ -4,18 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- CSS only -->
     <link rel="stylesheet" href="tasks.css">
     <script src="https://kit.fontawesome.com/72df1f8590.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <title>Document</title>
 </head>
 <body>
-    
-        
-    <div class="container">
-        
+    <div class = "container">
         <nav class="navbar navbar-expand-lg navbar-light bg-warning">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">To-do list</a>
@@ -41,91 +37,73 @@
             
         </nav>
     
-        
-        
-
-            <!-- Add Task section -->
-            <div class="row m-1 p-4">
-                
-                <div class="col">
-                    <div class = "add-task d-flex">
-                        <input type="text" class="form-control" placeholder=" Add item..."/>
-                        <button type="button" class="btn btn-primary">Add</button>
-                     </div>
-                    
-        
-                     <ul class="tasks-to-do list-group">
-                        <li class="list-group-item mine">
-                          <input class="form-check-input me-1 " type="checkbox" value="" aria-label="...">
-                          <span>hello </span>
-                         <button class = "delete-button"><i class="fa fa-trash"></i></button>
-                         <button class = "edit-button"><i class="far fa-edit"></i></button>
-                        </li>
-                        <li class="list-group-item">
-                          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                         <span>Sleep</span>
-                          <button class = "delete-button"><i class="fa fa-trash"></i></button>
-                          <button class = "edit-button"><i class="far fa-edit"></i></button>
-
-                        </li>
-                        <li class="list-group-item" class= "complete">
-                          <input class="form-check-input me-1 " type="checkbox" value="" aria-label="...">
-                          <span>drink tea</span>
-                          <button class = "delete-button"><i class="fa fa-trash"></i></button>
-                          <button class = "edit-button"><i class="far fa-edit"></i></button>
-
-                        </li>
-                        <li class="list-group-item">
-                          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                          <span>sleep</span>
-                          <button class = "delete-button"><i class="fa fa-trash"></i></button>
-                          <button class = "edit-button"><i class="far fa-edit"></i></button>
-                        </li>
-                        <li class="list-group-item">
-                          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                          <span>drink coffee</span>
-                          <button class = "delete-button"><i class="fa fa-trash"></i></button>
-                          <button class = "edit-button"><i class="far fa-edit"></i></button>
-                        </li>
-                      </ul>
-                </div>
-              
-               
-                 
-                
-            </div>
-
-        </div>
-           
-            
-        </div>   
-      
-    </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <script>
-
-        
-
-
-
-        //$(document).ready(function(){
-           //$(".form-check-input").click(function(){
-               //$(this).parent().toggleClass("complete");
-           //});
-           
-
-
-           //$(".delete-button").click(function(){
-               //$(this).parent().remove();
-           //});           
-        //});
-
-
-    </script>
+        <div class = "content">
+       
+        <div class = "add-task d-flex">
+            <input type="text" id = "add-task-field" class="form-control" placeholder=" Add item..."/>
+            <button type="button" class="add-button btn btn-primary">Add</button>       
+         </div>
 
     
-   
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">All</button>
+              <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">School</button>
+              <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Work</button>
+            </div>
+        </nav>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody id = "tasks-tbody">
+                <tr>
+                  <td><i class="complete-button far fa-circle"></i></td>
+                  <td width = 5%>2.12</td>
+                  <td width = 90%>Sleep</td>
+                  <td><i class="delete-button far fa-times-circle"></i></td>
+                </tr>
+                <tr>
+                  <td><i class="complete-button far fa-circle"></i></td>
+                  <td>3.2</td>
+                  <td>Sleep</td>
+                  <td><i class="delete-button far fa-times-circle"></i></td>
+                  
+                </tr>
+                <tr>
+                  <td><i class="complete-button far fa-circle"></i></td>
+                  <td>4.2</td>
+                  <td>drink tea</td>
+                  <td><i class="delete-button far fa-times-circle"></i></td>
+                </tr>
+                
+               
+              </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    //$(document).ready(function(){
+    //$(".complete-button").click(function(){
+        //$(this).closest('tr').toggleClass("complete");
+        //$(this).toggleClass("fa-check-circle fa-circle");
+    //});
+    
+
+
+    //$(".delete-button").click(function(){
+        //$(this).closest('tr').remove();
+    //});           
+ //});
+</script>
+<script src="tasks-table.js" ></script>
+    
 </body>
 </html>
